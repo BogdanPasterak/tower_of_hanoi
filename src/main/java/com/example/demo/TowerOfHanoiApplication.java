@@ -10,8 +10,8 @@ public class TowerOfHanoiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(TowerOfHanoiApplication.class, args);
-		TowerOfHanoi towerOfHanoi = (TowerOfHanoi) ctx.getBean("towerOfHanoi");
-		towerOfHanoi.say();
+		InjectedByConstructorService constructorService = (InjectedByConstructorService) ctx.getBean("injectedByConstructorService");
+		constructorService.getMessage();
 	}
 
 }
