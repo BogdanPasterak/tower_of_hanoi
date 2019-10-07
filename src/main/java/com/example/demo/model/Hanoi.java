@@ -23,5 +23,22 @@ public class Hanoi {
 				"\nTower 2 " + towers[1].toString() +
 				"\nTower 3 " + towers[2].toString();
 	}
+	
+	// recursive method
+	// move element to different tower
+	public void move(int from, int to, int which) {
+		// if is on the top
+		if (which == towers[from].getIndexTop() ) {
+			towers[from].swap(towers[to]);
+			System.out.println(towers[from].getIndexTop());
+		} else {
+			int third = 3 - from - to;
+			int thirdTop = towers[third].getIndexTop();
+			move(from, third , which - 1);
+			towers[from].swap(towers[to]);
+			move(third, to, thirdTop - 1);
+		}
+		
+	}
 
 }

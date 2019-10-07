@@ -32,4 +32,29 @@ public class Tower {
 		return Arrays.toString(levels);
 	}
 
+	public int getIndexTop() {
+		for (int i = 1; i < levels.length; i++) {
+			if (levels[i] > 0)
+				return i;
+		}
+		return levels.length;
+	}
+
+	public void swap(Tower tower) {
+		
+		int indexFrom = this.getIndexTop();
+		int indexTo = tower.getIndexTop();
+		
+		tower.setElement(indexTo - 1, this.getElement(indexFrom));
+		this.setElement(indexFrom, 0);
+	}
+
+	public int getElement(int index) {
+		return levels[index];
+	}
+
+	public void setElement(int index, int element) {
+		levels[index] = element;
+	}
+
 }
