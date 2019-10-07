@@ -1,4 +1,7 @@
 package com.example.demo.model;
+
+import java.util.Arrays;
+
 /**
  * 
  * @author: Bogdan Pasterak
@@ -7,18 +10,13 @@ package com.example.demo.model;
  * contains levels with value int
  *
  */
-/**
- * 
- * @author: Bogdan Pasterak
- * @date:   7 Oct 2019
- *
- */
-public class tower {
+
+public class Tower {
 	// array of levels
 	private int[] levels;
 	
 	// Constructor
-	public tower(int level) {
+	public Tower(int level) {
 		levels = new int[level + 1];
 	}
 	
@@ -27,6 +25,11 @@ public class tower {
 		for (int i = 0; i < levels.length; i++) {
 			levels[i] = i;
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return Arrays.toString(levels);
 	}
 
 }

@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.example.demo.controllers.TowerOfHanoiController;
+import com.example.demo.model.Hanoi;
 
 @SpringBootApplication
 public class TowerOfHanoiApplication {
@@ -17,6 +18,8 @@ public class TowerOfHanoiApplication {
 		
 		TowerOfHanoiController controller = (TowerOfHanoiController) ctx.getBean("towerOfHanoiController");
 		controller.say();
+		Hanoi hanoi = new Hanoi(3);
+		System.out.println(hanoi.toString());
 
 	}
 
