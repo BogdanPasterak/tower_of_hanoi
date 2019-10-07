@@ -18,11 +18,10 @@ public class TowerOfHanoiApplication {
 		
 		TowerOfHanoiController controller = (TowerOfHanoiController) ctx.getBean("towerOfHanoiController");
 		controller.say();
-		int level = 2;
+		int level = 4;
 		Hanoi hanoi = new Hanoi(level);
 		System.out.println(hanoi.toString());
 		hanoi.move(0, 2, level);
-		System.out.println(hanoi.toString());
 
 	}
 

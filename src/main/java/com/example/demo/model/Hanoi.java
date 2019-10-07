@@ -30,12 +30,18 @@ public class Hanoi {
 		// if is on the top
 		if (which == towers[from].getIndexTop() ) {
 			towers[from].swap(towers[to]);
-			System.out.println(towers[from].getIndexTop());
-		} else {
+			System.out.println("\n"+this.toString());
+		}
+		// else move one above to third tower
+		// swap right one
+		// move from third to top
+		else {
 			int third = 3 - from - to;
 			int thirdTop = towers[third].getIndexTop();
+			
 			move(from, third , which - 1);
 			towers[from].swap(towers[to]);
+			System.out.println("\n"+this.toString());
 			move(third, to, thirdTop - 1);
 		}
 		
